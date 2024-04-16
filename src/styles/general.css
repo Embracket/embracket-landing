@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --background-color: #EEE;
+    --body-background-color: white;
+    --text-color: #333;
+    --text-color-negative: var(--background-color);
+    --text-color-shadowed: #444;
+
+    --backdrop-color: 10,10,10;
+
+    --mild-border-radius: .5rem;
+    --default-border-radius: 1rem;
+    --high-border-radius: 2rem;
+    --aggressive-border-radius: 3rem;
+
+    --transition-duration-medium: .5s;
+    --transition-duration-fast: .25s;
+    --transition-duration-veryfast: .125s;
+
+    font-family: Noto Sans;
+    font-size: 12pt;
+    color: var(--text-color);
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+html{
+    background-color: var(--background-color);
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+    min-height: 100vh;
+    width: 100%;
+
+    margin: 0 auto;
+
+    background-color: var(--body-background-color);
+}
+
+/*******************************/
+/* Default text settings stuff */
+/*******************************/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    margin: 1em 0 .5em 0;
+    line-height: 1.5em;
+}
+
+p{
+    line-height: 1.5em;
+}
+
+p+p{
+    margin: 1em 0;
+}
+
+/************/
+/* Articles */
+/************/
+
+li {
+    margin: .25em 0;
+    line-height: 1.5em;
+}
+
+img{
+    max-width: 100%;
+    object-fit: contain;
+
+    border-radius: var(--default-border-radius);
+}
+
+button, select, input{
+    border: none;
+    border-radius: var(--default-border-radius);
+
+    margin: .75em .5em .5em 0em;
+    padding: .5em .75em;
+
+    text-align: center;
+    font-weight: 600;
+    cursor: pointer;
+
+    background-color: rgba(var(--backdrop-color),0.2);
+    color: var(--text-color-shadowed);
+
+    transition: background-color, border-radius;
+    transition-duration: var(--transition-duration-veryfast);
+
+    &:hover{
+        border-radius: var(--mild-border-radius);
+        background-color: rgba(var(--backdrop-color),0.3);
+
+        transition: background-color, border-radius;
+        transition-duration: var(--transition-duration-veryfast);
+    }
+}

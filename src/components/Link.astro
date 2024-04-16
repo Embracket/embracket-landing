@@ -1,0 +1,52 @@
+---
+interface Props {
+	href: string;
+    color?: string;
+}
+
+const { href, color } = Astro.props;
+---
+
+<a class={"link " + color} href={href}>
+    <li>
+        <slot />
+    </li>
+</a>
+
+<style>
+    .link{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        min-height: 3rem;
+        width: 50%;
+
+        margin: 0 1em 0 0;
+        padding: .25em .5em;
+
+        color: var(--text-color);
+        text-decoration: none;
+
+        background-color: rgba(var(--backdrop-color),0.2);
+        border-radius: var(--default-border-radius);
+
+        transition: border-radius;
+        transition-duration: var(--transition-duration-medium);
+
+        &:hover{
+            border-radius: var(--aggressive-border-radius);
+
+            transition: border-radius;
+            transition-duration: var(--transition-duration-medium);
+        }
+    }
+
+    .red{
+        background-color: rgba(255,80,20,0.75);
+    }
+
+    .light-blue{
+        background-color: rgba(50,120,255,0.75);
+    }
+</style>
