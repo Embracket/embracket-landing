@@ -9,6 +9,9 @@
 
     --backdrop-color: 10,10,10;
 
+    --secondary: 255,80,20;
+    --primary: 50,120,255;
+
     --mild-border-radius: .5rem;
     --default-border-radius: 1rem;
     --high-border-radius: 2rem;
@@ -19,7 +22,7 @@
     --transition-duration-veryfast: .125s;
 
     font-family: Noto Sans;
-    font-size: 12pt;
+    font-size: 14pt;
     color: var(--text-color);
 }
 
@@ -55,18 +58,16 @@ body{
 /* Default text settings stuff */
 /*******************************/
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6{
-    margin: 1em 0 .5em 0;
-    line-height: 1.5em;
+h1{
+    font-size: 3em;
 }
 
 p{
     line-height: 1.5em;
+}
+
+p:first-of-type{
+    margin-top: 1em;
 }
 
 p+p{
@@ -76,41 +77,10 @@ p+p{
 /************/
 /* Articles */
 /************/
+article{
+    width: 80%;
 
-li {
-    margin: .25em 0;
-    line-height: 1.5em;
-}
+    margin: 0 0 2em 0;
 
-img{
-    max-width: 100%;
-    object-fit: contain;
-
-    border-radius: var(--default-border-radius);
-}
-
-button, select, input{
-    border: none;
-    border-radius: var(--default-border-radius);
-
-    margin: .75em .5em .5em 0em;
-    padding: .5em .75em;
-
-    text-align: center;
-    font-weight: 600;
-    cursor: pointer;
-
-    background-color: rgba(var(--backdrop-color),0.2);
-    color: var(--text-color-shadowed);
-
-    transition: background-color, border-radius;
-    transition-duration: var(--transition-duration-veryfast);
-
-    &:hover{
-        border-radius: var(--mild-border-radius);
-        background-color: rgba(var(--backdrop-color),0.3);
-
-        transition: background-color, border-radius;
-        transition-duration: var(--transition-duration-veryfast);
-    }
+    font-size: 1rem;
 }

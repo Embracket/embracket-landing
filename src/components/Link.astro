@@ -22,31 +22,36 @@ const { href, color } = Astro.props;
         min-height: 3rem;
         width: 50%;
 
-        margin: 0 1em 0 0;
+        margin: 0 2em 0 0;
         padding: .25em .5em;
 
-        color: var(--text-color);
+        color: var(--text-color-negative);
         text-decoration: none;
+        font-weight: 600;
 
         background-color: rgba(var(--backdrop-color),0.2);
-        border-radius: var(--default-border-radius);
+        border-radius: var(--aggressive-border-radius);
 
         transition: border-radius;
         transition-duration: var(--transition-duration-medium);
 
         &:hover{
-            border-radius: var(--aggressive-border-radius);
+            border-radius: var(--default-border-radius);
 
             transition: border-radius;
             transition-duration: var(--transition-duration-medium);
         }
+
+        &:last-of-type{
+            margin-right: 0;
+        }
     }
 
     .red{
-        background-color: rgba(255,80,20,0.75);
+        background-color: rgba(var(--secondary),0.75);
     }
 
     .light-blue{
-        background-color: rgba(50,120,255,0.75);
+        background-color: rgba(var(--primary),0.75);
     }
 </style>
