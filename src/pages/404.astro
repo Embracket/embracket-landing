@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Link from '../components/Link.astro';
+import Links from '../components/Links.astro';
+import Card from '../components/Card.astro';
+
+---
+
+<Layout title="Embracket">
+	<div id="full-page">
+		<Card>
+			<article id="main-content">
+				<h1>404</h1>
+                <p>This page does not exist, either because this site is being renovated, or because it never existed.</p>
+                <p><em>It might, however, exist on the old site, which you can visit by pressing the "proceed button" below. Otherwise, visit the main page for this landing page by pressing the other button.</em></p>
+			</article>
+			
+			<Links>
+				<Link href="https://old.embracket.com" color="red" icon="/src/assets/warning.svg">Proceed</Link>
+				<Link href="/" color="light-blue" icon="/src/assets/home.svg">Home</Link>
+			</Links>
+		</Card>
+	</div>
+</Layout>
+
+<style>
+	#main-content{
+		height: 85%;
+		opacity: 0.9;
+	}
+
+	#logo{
+		float: left;
+		margin-right: 1.5em;
+		width: 100px;
+
+		filter: brightness(100%);
+	}
+
+	#heading{
+		font-size: 3em;
+	}
+
+	#subheading{
+		opacity: 0.6;
+		color: rgba(var(--secondary));
+	}
+</style>
