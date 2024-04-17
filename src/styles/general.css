@@ -23,7 +23,7 @@
 
     font-family: Noto Sans;
     font-size: 14pt;
-    color: var(--text-color);
+    color: var(--text-color-negative);
 }
 
 *,
@@ -51,16 +51,25 @@ body{
 
     margin: 0 auto;
 
-    background-color: var(--body-background-color);
+    background: url(/src/assets/preview.png);
+}
+
+#full-page{
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(var(--backdrop-color),0.2);
+    backdrop-filter: blur(var(--mild-border-radius));
 }
 
 /*******************************/
 /* Default text settings stuff */
 /*******************************/
-
-h1{
-    font-size: 3em;
-}
 
 p{
     line-height: 1.5em;
@@ -83,4 +92,10 @@ article{
     margin: 0 0 2em 0;
 
     font-size: 1rem;
+}
+
+@media only screen and (max-width: 600px) {
+    article{
+        width: 90%;
+    }
 }

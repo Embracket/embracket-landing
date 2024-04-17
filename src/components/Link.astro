@@ -2,13 +2,15 @@
 interface Props {
 	href: string;
     color?: string;
+    icon?: string;
 }
 
-const { href, color } = Astro.props;
+const { href, color, icon } = Astro.props;
 ---
 
 <a class={"link " + color} href={href}>
     <li>
+        {icon != undefined && <img src={icon}>}
         <slot />
     </li>
 </a>
@@ -22,8 +24,8 @@ const { href, color } = Astro.props;
         min-height: 3rem;
         width: 50%;
 
-        margin: 0 2em 0 0;
-        padding: .25em .5em;
+        margin: 0 1em 0 0;
+        padding: .25em 2em;
 
         color: var(--text-color-negative);
         text-decoration: none;
@@ -32,18 +34,35 @@ const { href, color } = Astro.props;
         background-color: rgba(var(--backdrop-color),0.2);
         border-radius: var(--aggressive-border-radius);
 
-        transition: border-radius;
+        transition: border-radius, filter;
         transition-duration: var(--transition-duration-medium);
 
         &:hover{
             border-radius: var(--default-border-radius);
+            filter: brightness(120%);
 
-            transition: border-radius;
+            transition: border-radius, filter;
             transition-duration: var(--transition-duration-medium);
         }
 
         &:last-of-type{
             margin-right: 0;
+        }
+
+        li{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+
+            img{
+                width: 2em;
+                
+                margin-right: .5em;
+
+                filter: brightness(250%) contrast(300%);
+                mix-blend-mode: hard-light;
+            }
         }
     }
 
@@ -53,5 +72,12 @@ const { href, color } = Astro.props;
 
     .light-blue{
         background-color: rgba(var(--primary),0.75);
+    }
+
+    @media only screen and (max-width: 600px) {
+        .link{
+            width: 100%;
+            margin: 0 0 1em 0;
+        }
     }
 </style>

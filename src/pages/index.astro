@@ -6,26 +6,29 @@ import Card from '../components/Card.astro';
 ---
 
 <Layout title="Embracket">
-	<Card>
-		<article id="main-content">
-			<img id="logo" src="/src/assets/logo.png" alt="Embracket logo">
-			<h1 id="heading">Embracket</h1>
-			<h3 id="subheading">Under renovation!</h3>
-			<p>This website is based of a foundation I started building when I was 16. I have since then graduated "gymnasiet", and am now in my second year of university. I have throughout learnt a ton, and I would like to update my website to represent that. </p>
-			<p>While I'm impressed with what I was able to achieve purely using HTML, CSS and JavaScript, it is time to move on to a more modern solution. When I have time, I will migrate this website to a stack using Astro.js and Solid.js.</p>
-			<p><strong>If you still wish to proceed to the old version of the website, navigate there using the button below; or visit my GitHub page, where I host most of my projects currently.</strong></p>
-		</article>
-		
-		<Links>
-			<Link href="https://old.embracket.com" color="red">Proceed anyway</Link>
-			<Link href="https://www.github.com/mikael-ros" color="light-blue">Go to GitHub instead</Link>
-		</Links>
-	</Card>
+	<div id="full-page">
+		<Card>
+			<article id="main-content">
+				<img id="logo" src="/src/assets/logo.png" alt="Embracket logo">
+				<h1 id="heading">Embracket</h1>
+				<h3 id="subheading">Under renovation!</h3>
+				<p>This website is based of a foundation I started building when I was 16. I have since then graduated "gymnasiet", and am now in my second year of university. I have throughout learnt a ton, and I would like to update my website to represent that. </p>
+				<p>While I'm impressed with what I was able to achieve purely using HTML, CSS and JavaScript, it is time to move on to a more modern solution. When I have time, I will migrate this website to a stack using Astro.js and Solid.js.</p>
+				<p><strong>If you still wish to proceed to the old version of the website, navigate there using the button below; or visit my GitHub page, where I host most of my projects currently.</strong></p>
+			</article>
+			
+			<Links>
+				<Link href="https://old.embracket.com" color="red" icon="/src/assets/warning.svg">Proceed anyway</Link>
+				<Link href="https://www.github.com/mikael-ros" color="light-blue" icon="/src/assets/github-mark.svg">Go to GitHub instead</Link>
+			</Links>
+		</Card>
+	</div>
 </Layout>
 
 <style>
 	#main-content{
 		height: 85%;
+		opacity: 0.9;
 	}
 
 	#logo{
@@ -33,7 +36,7 @@ import Card from '../components/Card.astro';
 		margin-right: 1.5em;
 		width: 100px;
 
-		filter: brightness(30%);
+		filter: brightness(100%);
 	}
 
 	#heading{
