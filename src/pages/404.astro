@@ -4,6 +4,9 @@ import Link from '../components/Link.astro';
 import Links from '../components/Links.astro';
 import Card from '../components/Card.astro';
 
+import warning from "../assets/warning.svg";
+import home from "../assets/home.svg";
+
 ---
 
 <Layout title="Embracket">
@@ -16,8 +19,8 @@ import Card from '../components/Card.astro';
 			</article>
 			
 			<Links>
-				<Link href="https://old.embracket.com" color="red" icon="/src/assets/warning.svg">Proceed</Link>
-				<Link href="/" color="light-blue" icon="/src/assets/home.svg">Home</Link>
+				<Link href="https://old.embracket.com" color="red" icon={warning.src}>Proceed</Link>
+				<Link href="/" color="light-blue" icon={home.src}>Home</Link>
 			</Links>
 		</Card>
 	</div>
